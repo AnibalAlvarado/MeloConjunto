@@ -7,7 +7,8 @@
 <h2> / Sobre mi /</h2>
   
 - 🧠 Actualmente en desarrollo
-- 👾 MIembros: Anibal Alvarado Andrade
+- 👾 MIembros:
+- Anibal Alvarado Andrade
 - Diego Fernando Cuellar Hernandez
 - Brayan Estiven Carvajal Padilla
 - 😄 Trabajando en Unity y el lenguaje de C#
