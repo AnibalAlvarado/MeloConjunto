@@ -1,0 +1,16 @@
+﻿using AutoMapper;
+using MeloconjuntoApi.Dtos;
+using MeloconjuntoApi.Models;
+
+namespace MeloconjuntoApi.Mappers
+{
+    public class MapaMapping : Profile
+    {
+        public MapaMapping()
+        {
+            CreateMap<MapaDto, Mapa>()
+            .ForMember(dest => dest.Dificultad,
+                      opt => opt.MapFrom(src => src.DificultadId));
+        }
+    }
+}

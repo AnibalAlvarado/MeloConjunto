@@ -1,0 +1,39 @@
+using MeloconjuntoApi.Data.Context;
+using MeloconjuntoApi.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
+var builder = WebApplication.CreateBuilder(args); // crea un nuevo IHostBuilder por medio del metodo estatico CreateBuilder de la clase webapplication
+//Un IHostBuilder es una interfaz que representa un host de aplicación, o sea el entorno donde se ejecutará la aplicación.
+
+// Add services to the container.
+// Crea una variable para la cadena de conexion
+var conectionString = builder.Configuration.GetConnectionString("DbConnection"); // aca lo que hace es traer la cadena de conexion y pasarsela como parametro a el metodo getconnectionstring
+//Registrar el servicio para la conexion
+builder.Services.AddDbContext<DataContext>(options => options.UseNpgsql(conectionString)); // expresión lambda que se utiliza para configurar el DbContext
+// Una expresión lambda es una forma concisa de definir una función anónima en C#
+builder.Services.AddControllers();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<EmailService>();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

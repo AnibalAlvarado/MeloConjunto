@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UsuariosSet" EntityType="Model1.Usuarios" />
+    <EntitySet Name="CredencialesSet" EntityType="Model1.Credenciales" />
+    <EntitySet Name="RolesSet" EntityType="Model1.Roles" />
+    <EntitySet Name="UsuariosRolesSet" EntityType="Model1.UsuariosRoles" />
+    <EntitySet Name="MapasSet" EntityType="Model1.Mapas" />
+    <EntitySet Name="DificultadesSet" EntityType="Model1.Dificultades" />
+    <EntitySet Name="NivelesSet" EntityType="Model1.Niveles" />
+    <EntitySet Name="PreguntasSet" EntityType="Model1.Preguntas" />
+    <EntitySet Name="RespuestasSet" EntityType="Model1.Respuestas" />
+    <EntitySet Name="PuntajesSet" EntityType="Model1.Puntajes" />
+    <EntitySet Name="RankingsUsuariosSet" EntityType="Model1.RankingsUsuarios" />
+    <AssociationSet Name="UsuariosCredenciales" Association="Model1.UsuariosCredenciales">
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+      <End Role="Credenciales" EntitySet="CredencialesSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuariosUsuariosRoles" Association="Model1.UsuariosUsuariosRoles">
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+      <End Role="UsuariosRoles" EntitySet="UsuariosRolesSet" />
+    </AssociationSet>
+    <AssociationSet Name="RolesUsuariosRoles" Association="Model1.RolesUsuariosRoles">
+      <End Role="Roles" EntitySet="RolesSet" />
+      <End Role="UsuariosRoles" EntitySet="UsuariosRolesSet" />
+    </AssociationSet>
+    <AssociationSet Name="UsuariosPuntajes" Association="Model1.UsuariosPuntajes">
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+      <End Role="Puntajes" EntitySet="PuntajesSet" />
+    </AssociationSet>
+    <AssociationSet Name="PreguntasRespuestas" Association="Model1.PreguntasRespuestas">
+      <End Role="Preguntas" EntitySet="PreguntasSet" />
+      <End Role="Respuestas" EntitySet="RespuestasSet" />
+    </AssociationSet>
+    <AssociationSet Name="MapasNiveles" Association="Model1.MapasNiveles">
+      <End Role="Mapas" EntitySet="MapasSet" />
+      <End Role="Niveles" EntitySet="NivelesSet" />
+    </AssociationSet>
+    <AssociationSet Name="DificultadesMapas" Association="Model1.DificultadesMapas">
+      <End Role="Dificultades" EntitySet="DificultadesSet" />
+      <End Role="Mapas" EntitySet="MapasSet" />
+    </AssociationSet>
+    <AssociationSet Name="NivelesPuntajes" Association="Model1.NivelesPuntajes">
+      <End Role="Niveles" EntitySet="NivelesSet" />
+      <End Role="Puntajes" EntitySet="PuntajesSet" />
+    </AssociationSet>
+    <EntitySet Name="RankingsSet" EntityType="Model1.Rankings" />
+    <AssociationSet Name="UsuariosRankingsUsuarios" Association="Model1.UsuariosRankingsUsuarios">
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+      <End Role="RankingsUsuarios" EntitySet="RankingsUsuariosSet" />
+    </AssociationSet>
+    <AssociationSet Name="RankingsRankingsUsuarios" Association="Model1.RankingsRankingsUsuarios">
+      <End Role="Rankings" EntitySet="RankingsSet" />
+      <End Role="RankingsUsuarios" EntitySet="RankingsUsuariosSet" />
+    </AssociationSet>
+    <EntitySet Name="RecuperarPasswordSet" EntityType="Model1.RecuperarPassword" />
+    <AssociationSet Name="UsuariosRecuperarPassword" Association="Model1.UsuariosRecuperarPassword">
+      <End Role="Usuarios" EntitySet="UsuariosSet" />
+      <End Role="RecuperarPassword" EntitySet="RecuperarPasswordSet" />
+    </AssociationSet>
+    <AssociationSet Name="NivelesPreguntas" Association="Model1.NivelesPreguntas">
+      <End Role="Niveles" EntitySet="NivelesSet" />
+      <End Role="Preguntas" EntitySet="PreguntasSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="UsuarioId" />
+    </Key>
+    <Property Name="UsuarioId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioNombre" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="UsuarioApellido" Type="String" Nullable="false" MaxLength="70" />
+    <Property Name="UsuarioEdad" Type="Byte" Nullable="false" />
+    <Property Name="UsuarioFechaRegistro" Type="DateTime" Nullable="false" />
+    <Property Name="UsuarioActivo" Type="Boolean" Nullable="false" DefaultValue="False" />
+    <Property Name="UsuarioTokenActivacion" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="100" />
+    <Property Name="UsuarioTokenExpira" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Credenciales" Relationship="Model1.UsuariosCredenciales" FromRole="Usuarios" ToRole="Credenciales" />
+    <NavigationProperty Name="UsuariosRoles" Relationship="Model1.UsuariosUsuariosRoles" FromRole="Usuarios" ToRole="UsuariosRoles" />
+    <NavigationProperty Name="Puntajes" Relationship="Model1.UsuariosPuntajes" FromRole="Usuarios" ToRole="Puntajes" />
+    <NavigationProperty Name="RankingsUsuarios" Relationship="Model1.UsuariosRankingsUsuarios" FromRole="Usuarios" ToRole="RankingsUsuarios" />
+    <NavigationProperty Name="RecuperarPassword" Relationship="Model1.UsuariosRecuperarPassword" FromRole="Usuarios" ToRole="RecuperarPassword" />
+  </EntityType>
+  <EntityType Name="Credenciales">
+    <Key>
+      <PropertyRef Name="CredencialId" />
+    </Key>
+    <Property Name="CredencialId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int16" Nullable="false" />
+    <Property Name="CredencialCorreo" Type="String" Nullable="false" MaxLength="70" />
+    <Property Name="CredencialPassword" Type="String" Nullable="false" MaxLength="100" />
+    <NavigationProperty Name="Usuarios" Relationship="Model1.UsuariosCredenciales" FromRole="Credenciales" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolNombre" Type="String" Nullable="false" MaxLength="50" />
+    <NavigationProperty Name="UsuariosRoles" Relationship="Model1.RolesUsuariosRoles" FromRole="Roles" ToRole="UsuariosRoles" />
+  </EntityType>
+  <EntityType Name="UsuariosRoles">
+    <Key>
+      <PropertyRef Name="UsuarioRolId" />
+    </Key>
+    <Property Name="UsuarioRolId" Type="Int16" Nullable="false" />
+    <Property Name="RolId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Model1.UsuariosUsuariosRoles" FromRole="UsuariosRoles" ToRole="Usuarios" />
+    <NavigationProperty Name="Roles" Relationship="Model1.RolesUsuariosRoles" FromRole="UsuariosRoles" ToRole="Roles" />
+    <Property Name="UsuarioId" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mapas">
+    <Key>
+      <PropertyRef Name="MapaId" />
+    </Key>
+    <Property Name="MapaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MapaNombre" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="DificultadId" Type="Int16" Nullable="false" />
+    <Property Name="MapaImagen" Type="String" Nullable="false" MaxLength="225" />
+    <NavigationProperty Name="Niveles" Relationship="Model1.MapasNiveles" FromRole="Mapas" ToRole="Niveles" />
+    <NavigationProperty Name="Dificultades" Relationship="Model1.DificultadesMapas" FromRole="Mapas" ToRole="Dificultades" />
+  </EntityType>
+  <EntityType Name="Dificultades">
+    <Key>
+      <PropertyRef Name="DificultadId" />
+    </Key>
+    <Property Name="DificultadId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DificultadNombre" Type="String" Nullable="false" MaxLength="40" />
+    <NavigationProperty Name="Mapas" Relationship="Model1.DificultadesMapas" FromRole="Dificultades" ToRole="Mapas" />
+  </EntityType>
+  <EntityType Name="Niveles">
+    <Key>
+      <PropertyRef Name="NivelId" />
+    </Key>
+    <Property Name="NivelId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MapaId" Type="Int16" Nullable="false" />
+    <Property Name="NivelNombre" Type="String" Nullable="false" MaxLength="70" />
+    <NavigationProperty Name="Mapas" Relationship="Model1.MapasNiveles" FromRole="Niveles" ToRole="Mapas" />
+    <NavigationProperty Name="Puntajes" Relationship="Model1.NivelesPuntajes" FromRole="Niveles" ToRole="Puntajes" />
+    <NavigationProperty Name="Preguntas" Relationship="Model1.NivelesPreguntas" FromRole="Niveles" ToRole="Preguntas" />
+  </EntityType>
+  <EntityType Name="Preguntas">
+    <Key>
+      <PropertyRef Name="PreguntaId" />
+    </Key>
+    <Property Name="PreguntaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PreguntaSentencia" Type="String" Nullable="false" MaxLength="225" />
+    <Property Name="NivelId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Respuestas" Relationship="Model1.PreguntasRespuestas" FromRole="Preguntas" ToRole="Respuestas" />
+    <NavigationProperty Name="Niveles" Relationship="Model1.NivelesPreguntas" FromRole="Preguntas" ToRole="Niveles" />
+  </EntityType>
+  <EntityType Name="Respuestas">
+    <Key>
+      <PropertyRef Name="RespuestaId" />
+    </Key>
+    <Property Name="RespuestaId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RespuestaSentencia" Type="String" Nullable="false" MaxLength="225" />
+    <Property Name="RespuestaCorrecta" Type="Boolean" Nullable="false" />
+    <Property Name="PreguntaId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Preguntas" Relationship="Model1.PreguntasRespuestas" FromRole="Respuestas" ToRole="Preguntas" />
+  </EntityType>
+  <EntityType Name="Puntajes">
+    <Key>
+      <PropertyRef Name="PuntajeId" />
+    </Key>
+    <Property Name="PuntajeId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int16" Nullable="false" />
+    <Property Name="NivelId" Type="Int16" Nullable="false" />
+    <Property Name="PuntajeAciertos" Type="Byte" Nullable="false" />
+    <Property Name="PuntajePuntos" Type="Int16" Nullable="false" />
+    <Property Name="PuntajeTiempo" Type="Time" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Model1.UsuariosPuntajes" FromRole="Puntajes" ToRole="Usuarios" />
+    <NavigationProperty Name="Niveles" Relationship="Model1.NivelesPuntajes" FromRole="Puntajes" ToRole="Niveles" />
+    <Property Name="PuntajeErrores" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RankingsUsuarios">
+    <Key>
+      <PropertyRef Name="RankingUsuarioId" />
+    </Key>
+    <Property Name="RankingUsuarioId" Type="Int16" Nullable="false" />
+    <Property Name="RankingId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Model1.UsuariosRankingsUsuarios" FromRole="RankingsUsuarios" ToRole="Usuarios" />
+    <NavigationProperty Name="Rankings" Relationship="Model1.RankingsRankingsUsuarios" FromRole="RankingsUsuarios" ToRole="Rankings" />
+    <Property Name="UsuarioId" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="UsuariosCredenciales">
+    <End Type="Model1.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="Model1.Credenciales" Role="Credenciales" Multiplicity="1" />
+  </Association>
+  <Association Name="UsuariosUsuariosRoles">
+    <End Type="Model1.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="Model1.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
+  </Association>
+  <Association Name="RolesUsuariosRoles">
+    <End Type="Model1.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="Model1.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
+  </Association>
+  <Association Name="UsuariosPuntajes">
+    <End Type="Model1.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="Model1.Puntajes" Role="Puntajes" Multiplicity="*" />
+  </Association>
+  <Association Name="PreguntasRespuestas">
+    <End Type="Model1.Preguntas" Role="Preguntas" Multiplicity="1" />
+    <End Type="Model1.Respuestas" Role="Respuestas" Multiplicity="*" />
+  </Association>
+  <Association Name="MapasNiveles">
+    <End Type="Model1.Mapas" Role="Mapas" Multiplicity="1" />
+    <End Type="Model1.Niveles" Role="Niveles" Multiplicity="*" />
+  </Association>
+  <Association Name="DificultadesMapas">
+    <End Type="Model1.Dificultades" Role="Dificultades" Multiplicity="1" />
+    <End Type="Model1.Mapas" Role="Mapas" Multiplicity="*" />
+  </Association>
+  <Association Name="NivelesPuntajes">
+    <End Type="Model1.Niveles" Role="Niveles" Multiplicity="1" />
+    <End Type="Model1.Puntajes" Role="Puntajes" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Rankings">
+    <Key>
+      <PropertyRef Name="RankingId" />
+    </Key>
+    <Property Name="RankingId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RankingNombre" Type="String" Nullable="false" MaxLength="100" />
+    <Property Name="RankingFecha" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="RankingsUsuarios" Relationship="Model1.RankingsRankingsUsuarios" FromRole="Rankings" ToRole="RankingsUsuarios" />
+  </EntityType>
+  <Association Name="UsuariosRankingsUsuarios">
+    <End Type="Model1.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="Model1.RankingsUsuarios" Role="RankingsUsuarios" Multiplicity="*" />
+  </Association>
+  <Association Name="RankingsRankingsUsuarios">
+    <End Type="Model1.Rankings" Role="Rankings" Multiplicity="1" />
+    <End Type="Model1.RankingsUsuarios" Role="RankingsUsuarios" Multiplicity="*" />
+  </Association>
+  <EntityType Name="RecuperarPassword">
+    <Key>
+      <PropertyRef Name="RecuperarPasswordId" />
+    </Key>
+    <Property Name="RecuperarPasswordId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="String" Nullable="false" />
+    <Property Name="RecuperarPasswordToken" Type="String" Nullable="false" MaxLength="100" />
+    <Property Name="RecuperarPasswordFechaSolicitud" Type="String" Nullable="false" />
+    <Property Name="RecuperarPasswordFechaLimite" Type="String" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Model1.UsuariosRecuperarPassword" FromRole="RecuperarPassword" ToRole="Usuarios" />
+  </EntityType>
+  <Association Name="UsuariosRecuperarPassword">
+    <End Type="Model1.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="Model1.RecuperarPassword" Role="RecuperarPassword" Multiplicity="*" />
+  </Association>
+  <Association Name="NivelesPreguntas">
+    <End Type="Model1.Niveles" Role="Niveles" Multiplicity="1" />
+    <End Type="Model1.Preguntas" Role="Preguntas" Multiplicity="1" />
+  </Association>
+</Schema>

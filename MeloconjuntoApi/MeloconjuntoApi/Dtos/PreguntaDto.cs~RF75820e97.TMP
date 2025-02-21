@@ -1,0 +1,11 @@
+﻿using MeloconjuntoApi.Models;
+
+namespace MeloconjuntoApi.Dtos
+{
+    public class PreguntaDto
+    {
+        public String PreguntaSentencia { get; set; }
+        public required ICollection<Respuesta> Respuestas { get; set; }
+
+    }
+}

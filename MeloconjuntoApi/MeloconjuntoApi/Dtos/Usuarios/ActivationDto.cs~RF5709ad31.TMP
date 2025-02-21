@@ -1,0 +1,7 @@
+﻿namespace MeloconjuntoApi.Dtos
+{
+    public class ActivationDto
+    {
+        public required string Token { get; set; }
+    }
+}

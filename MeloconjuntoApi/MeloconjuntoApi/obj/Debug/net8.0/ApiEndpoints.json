@@ -1,0 +1,534 @@
+[
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.DificultadController",
+    "Method": "ActualizarDificultad",
+    "RelativePath": "api/Dificultad/ActualizarDificultad/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dificultadDto",
+        "Type": "MeloconjuntoApi.Dtos.Dificultades.DificultadDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Dificultad",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.DificultadController",
+    "Method": "CrearDificultad",
+    "RelativePath": "api/Dificultad/CrearDificultad",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dificultadDto",
+        "Type": "MeloconjuntoApi.Dtos.Dificultades.DificultadDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Dificultad",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.DificultadController",
+    "Method": "EliminarDificultad",
+    "RelativePath": "api/Dificultad/EliminarDificultad/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.DificultadController",
+    "Method": "GetDificultad",
+    "RelativePath": "api/Dificultad/GetDificultad/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Dificultad",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.DificultadController",
+    "Method": "GetDificultades",
+    "RelativePath": "api/Dificultad/GetDificultades",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Dtos.Dificultades.GetDificultadDto, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.MapaController",
+    "Method": "CrearMapa",
+    "RelativePath": "api/Mapa/CrearMapa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mapaDto",
+        "Type": "MeloconjuntoApi.Dtos.Mapas.MapaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Mapa",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.MapaController",
+    "Method": "GetMapas",
+    "RelativePath": "api/Mapa/ObtenerMapas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Dtos.Mapas.GetMapaDto, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.NivelController",
+    "Method": "CrearNivel",
+    "RelativePath": "api/Nivel/CrearNivel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nivelDto",
+        "Type": "MeloconjuntoApi.Dtos.Niveles.NivelDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Dtos.Niveles.NivelResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.NivelController",
+    "Method": "GetNivel",
+    "RelativePath": "api/Nivel/ObtenerNivel/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Dtos.Niveles.NivelResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.NivelController",
+    "Method": "GetNiveles",
+    "RelativePath": "api/Nivel/ObtenerNiveles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Dtos.Niveles.NivelResponseDto, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.NivelController",
+    "Method": "ObtenerNivelesPorDificultad",
+    "RelativePath": "api/Nivel/ObtenerNivelesDificultad/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Dtos.Niveles.GetNivelDificultadDto, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.NivelController",
+    "Method": "GetRespuestasNivel",
+    "RelativePath": "api/Nivel/ObtenerRespuestas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[MeloconjuntoApi.Dtos.Niveles.RespuestaResponseDto, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.PasswordController",
+    "Method": "CambiarPassword",
+    "RelativePath": "api/Password/CambiarPassword/{token}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cambioPasswordDto",
+        "Type": "MeloconjuntoApi.Dtos.Password.CambioPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.PasswordController",
+    "Method": "GetRecuperaPassword",
+    "RelativePath": "api/Password/GetRecuperaPassword",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Models.RecuperaPassword, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.PasswordController",
+    "Method": "recuperarPasswords",
+    "RelativePath": "api/Password/RecuperarPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recuperaPasswordDto",
+        "Type": "MeloconjuntoApi.Dtos.Password.RecuperaPasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.RecuperaPassword",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.PasswordController",
+    "Method": "RecuperarToken",
+    "RelativePath": "api/Password/recuperarToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "recuperaTokenDto",
+        "Type": "MeloconjuntoApi.Dtos.Password.RecuperaTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.PuntajeController",
+    "Method": "GetPuntajes",
+    "RelativePath": "api/Puntaje/GetPuntajes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Models.Puntaje, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.PuntajeController",
+    "Method": "RegistrarPuntaje",
+    "RelativePath": "api/Puntaje/RegistrarPuntaje",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "puntajeDto",
+        "Type": "MeloconjuntoApi.Dtos.Puntajes.PuntajeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Puntaje",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.UsuarioController",
+    "Method": "ActivateAccount",
+    "RelativePath": "api/Usuario/Activate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "activationDto",
+        "Type": "MeloconjuntoApi.Dtos.Usuarios.ActivationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.UsuarioController",
+    "Method": "GetUserByEmail",
+    "RelativePath": "api/Usuario/GetUserByEmail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Dtos.Usuarios.UsuarioResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.UsuarioController",
+    "Method": "GetUsuariosWithCredenciales",
+    "RelativePath": "api/Usuario/GetUsuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MeloconjuntoApi.Models.Usuario, MeloconjuntoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.UsuarioController",
+    "Method": "Login",
+    "RelativePath": "api/Usuario/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "MeloconjuntoApi.Dtos.Usuarios.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Usuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MeloconjuntoApi.Controllers.UsuarioController",
+    "Method": "PostUsuario",
+    "RelativePath": "api/Usuario/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioDto",
+        "Type": "MeloconjuntoApi.Dtos.Usuarios.UsuarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "MeloconjuntoApi.Models.Usuario",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
