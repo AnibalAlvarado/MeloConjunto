@@ -7,7 +7,7 @@
 <h2> / Sobre mi /</h2>
   
 - 🧠 Actualmente en desarrollo
-- 👾 MIembros:
+- 👾 Miembros:
 - Anibal Alvarado Andrade
 - Diego Fernando Cuellar Hernandez
 - Brayan Estiven Carvajal Padilla
