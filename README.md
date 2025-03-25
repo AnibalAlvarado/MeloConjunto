@@ -6,7 +6,7 @@
 
 <h2> / Sobre Nosotros /</h2>
   
-- 🧠 Actualmente en Finalizado
+- 🧠 Actualmente Finalizado
 - 👾 Miembros:
 - Anibal Alvarado Andrade
 - Diego Fernando Cuellar 
