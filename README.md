@@ -11,5 +11,5 @@
 - Anibal Alvarado Andrade
 - Diego Fernando Cuellar 
 - Brayan Estiven Carvajal 
-- 😄 Trabajado en Unity y el lenguaje de C#
+- 😄 Trabajado en Unity usando el lenguaje de C#
 - 📫 Contactame: **melocunjunto@gmail.com**
